@@ -2,16 +2,14 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+subtitle: <a href='https://www.csh.ac.at/'>Complexity Science Hub</a> · <a href='https://www.meduniwien.ac.at/'>Medical University of Vienna</a> · Vienna, Austria
 
 profile:
   align: right
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
+    <p>Vienna, Austria</p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
@@ -27,8 +25,8 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](https://www.reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+My research focuses on complex systems and network science applied to health and language. I have established data-driven frameworks for epidemiology and healthcare analytics, ranging from wastewater-based forecasting to mapping gender-specific multimorbidity networks.
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+Currently, I am expanding these methods to natural language processing by analyzing the semantic topology of legal texts at the [SUSTech-ETH Risks-X Institute](https://www.risks-x.com/). This expertise underpins my proposed research in computational psychiatry, where I aim to track temporal network dynamics in psychotherapy to predict patient outcomes and visualize therapeutic change.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+I completed my PhD in Complex Systems at the Medical University of Vienna, where I worked on data-driven approaches to healthcare analytics and wastewater-based epidemiology. As a member of Austria's COVID-19 Forecasting Committee, I developed forecasts that informed national public health decisions.
