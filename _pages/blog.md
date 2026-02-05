@@ -2,7 +2,8 @@
 layout: default
 permalink: /blog/
 title: blog
-nav: true
+nav: false # temporarily hidden
+published: false
 nav_order: 1
 pagination:
   enabled: true

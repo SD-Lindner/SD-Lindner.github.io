@@ -14,6 +14,7 @@ cv:
 
   address:
     city: Vienna
+    region: Austria
     countryCode: AT
 
   sections:
@@ -70,7 +71,7 @@ cv:
         position: Data Scientist
         location: Vienna, Austria
         start_date: 2024-08
-        end_date: 2024-12
+        end_date: 2025-03
         highlights:
           - Designed and evaluated machine-learning models for information extraction from unstructured data.
 
@@ -86,32 +87,32 @@ cv:
 
     Skills:
       - name: Python
-        level: Expert
+        # level: Expert
         icon: fa-brands fa-python
         keywords: "NumPy, Pandas, scikit-learn, TensorFlow, PyTorch, Statsmodels"
 
       - name: Data Engineering
-        level: Expert
+        # level: Expert
         icon: fa-solid fa-database
         keywords: "SQL, ETL pipelines, large-scale data processing"
 
       - name: Tools
-        level: Expert
+        # level: Expert
         icon: fa-solid fa-tools
         keywords: "Git, Docker, Linux, LaTeX, R, MATLAB"
 
       - name: Visualization
-        level: Expert
+        # level: Expert
         icon: fa-solid fa-chart-line
         keywords: "Matplotlib, Plotly, interactive dashboards"
 
       - name: Statistical Modeling
-        level: Expert
+        # level: Expert
         icon: fa-solid fa-calculator
         keywords: "Regression (LASSO, Ridge, GLMMs), Survival Analysis, Bayesian inference"
 
       - name: Machine Learning
-        level: Expert
+        # level: Expert
         icon: fa-solid fa-robot
         keywords: "Random Forests, Gradient Boosting, SVM, dimensionality reduction (PCA, UMAP)"
 
@@ -121,12 +122,12 @@ cv:
         keywords: "CNNs, RNNs/LSTMs, transfer learning"
 
       - name: NLP & LLMs
-        level: Expert
+        # level: Expert
         icon: fa-solid fa-language
         keywords: "BERT, GPT, transformer fine-tuning, prompt engineering"
 
       - name: Network Science
-        level: Expert
+        # level: Expert
         icon: fa-solid fa-project-diagram
         keywords: "Graph analysis, agent-based modeling, epidemic models (SIR/SEIR)"
 
