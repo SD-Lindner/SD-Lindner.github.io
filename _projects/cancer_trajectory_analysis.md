@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Cancer Patient Stratification
+title: Patient Visit Trajectories
 description: Using visit trajectory analysis to identify patient subgroups with distinct survival patterns
 img: assets/img/cancer_trajectory.png
 importance: 1
