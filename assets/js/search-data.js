@@ -55,8 +55,8 @@ ninja.data = [{
       },{id: "news-launched-my-new-personal-website-excited-to-share-my-research-on-complex-systems-gender-medicine-and-computational-epidemiology",
           title: '🚀 Launched my new personal website! Excited to share my research on complex...',
           description: "",
-          section: "News",},{id: "projects-cancer-patient-stratification",
-          title: 'Cancer Patient Stratification',
+          section: "News",},{id: "projects-patient-visit-trajectories",
+          title: 'Patient Visit Trajectories',
           description: "Using visit trajectory analysis to identify patient subgroups with distinct survival patterns",
           section: "Projects",handler: () => {
               window.location.href = "/projects/cancer_trajectory_analysis/";
