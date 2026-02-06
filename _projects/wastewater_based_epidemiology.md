@@ -5,11 +5,12 @@ description: Estimating unreported SARS-CoV-2 infections using wastewater survei
 img: assets/img/wwbe.jpeg
 importance: 1
 category: work
+related_publications: true
 ---
 
 ## Overview
 
-This project presents a novel approach for estimating unreported SARS-CoV-2 infections in Austria using wastewater-based epidemiology (WBE). By analyzing longitudinal wastewater data from 113 treatment plants covering 73% of Austria's population, we developed a method to estimate total COVID-19 cases by integrating reported cases, testing volume, and viral load measurements while accounting for variant-specific shedding behavior.
+This project presents a novel approach for estimating unreported SARS-CoV-2 infections in Austria using wastewater-based epidemiology (WBE). By analyzing longitudinal wastewater data from 113 treatment plants covering 73% of Austria's population, we developed a method to estimate total COVID-19 cases by integrating reported cases, testing volume, and viral load measurements while accounting for variant-specific shedding behavior {% cite lindner2025unreported %}.
 
 ## Key Contributions
 
@@ -39,7 +40,3 @@ The method revealed substantial underreporting that increased over time. At the 
 - OLS Regression
 - Wastewater surveillance data processing
 - RT-qPCR viral load quantification
-
-## Publication
-
-Lindner, S.D., Oberacher, H., Weyermair, K., et al. (2025). Estimating unreported SARS-CoV-2 infections in Austria using wastewater-based epidemiology. *Heliyon*, 11, e43748. https://doi.org/10.1016/j.heliyon.2025.e43748
