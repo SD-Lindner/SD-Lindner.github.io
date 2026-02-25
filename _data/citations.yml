@@ -1,12 +1,12 @@
 metadata:
-  last_updated: '2026-02-18'
+  last_updated: '2026-02-25'
 papers:
   v0lgPK0AAAAJ:0EnyYjriUFMC:
     citations: 0
     title: Time-varying ecological interactions characterise equilibrium and stability
     year: '2025'
   v0lgPK0AAAAJ:2osOgNQ5qMEC:
-    citations: 11
+    citations: 12
     title: Meteorological factors and non-pharmaceutical interventions explain local differences in the spread of SARS-CoV-2 in Austria
     year: '2022'
   v0lgPK0AAAAJ:5nxA0vEk-isC:
@@ -54,6 +54,6 @@ papers:
     title: Thermodynamics of structure-forming systems
     year: '2021'
   v0lgPK0AAAAJ:ufrVoPGSRksC:
-    citations: 3
+    citations: 4
     title: The interplay of adipokines, body composition and glucose homeostasis in pregnant women with a history of RYGB operation
     year: '2023'
