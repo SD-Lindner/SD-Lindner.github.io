@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bipartite Network: Color-Coded OR Boxes</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #ffffff;
+      font-family: 'IBM Plex Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+      color: #161616;
+      overflow: hidden; 
+    }
+    h2 {
+      color: #161616;
+      font-size: 1.25em;
+      margin-bottom: 12px;
+      text-align: center;
+      font-weight: 600;
+    }
+    #chart-wrap {
+      width: 100%;
+      max-width: 900px;
+      background: #ffffff;
+      border: none;
+      border-radius: 0;
+      padding: 24px 16px;
+      box-shadow: none;
+    }
+    #svg-container {
+      position: relative;
+      width: 100%;
+    }
+    svg { width: 100%; height: auto; display: block; }
+    
+    .legend {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 15px;
+      flex-wrap: wrap;
+      padding: 0 10px;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #393939;
+      font-size: 0.85em;
+      background: #f4f4f4;
+      border: 1px solid #e0e0e0;
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+    .legend-line {
+      width: 24px;
+      height: 4px;
+      border-radius: 2px;
+    }
+    .tooltip {
+      position: absolute;
+      background: #ffffff;
+      color: #161616;
+      padding: 14px 18px;
+      border-radius: 6px;
+      font-size: 0.9em;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.2s ease, transform 0.2s ease, top 0.2s ease, bottom 0.2s ease;
+      border: 1px solid #c6c6c6;
+      width: max-content; 
+      max-width: 400px; 
+      line-height: 1.4;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      z-index: 10;
+    }
+  </style>
+</head>
+<body>
+<div id="chart-wrap">
+  <h2>Gender &amp; Socioeconomic Factors → Hypertension Comorbidities</h2>
+  
+  <div id="svg-container">
+    <svg id="network" viewBox="0 0 820 420" preserveAspectRatio="xMidYMid meet"></svg>
+    <div class="tooltip" id="tooltip"></div>
+  </div>
+  
+  <div class="legend">
+    <div class="legend-item">
+      <div class="legend-line" style="background:#648FFF;"></div>
+      <span>Male Sig.</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-line" style="background:#FE6100;"></div>
+      <span>Female Sig.</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-line" style="background:#DC267F;"></div>
+      <span>Both Sig.</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-line" style="background:#888;"></div>
+      <span>OR > 1 (Risk)</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-line" style="border-top: 2px dashed #888; background: transparent; height: 0;"></div>
+      <span>OR < 1 (Protective)</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-line" style="background:#FFB000; height:8px; border: 1px solid #d49300; opacity: 0.8;"></div>
+      <span>ORR Sig.</span>
+    </div>
+  </div>
+</div>
+
+<script>
+  const W = 820, H = 420;
+  const svg = d3.select('#network');
+
+  const leftNodes = [
+    { id: 'work',      label: 'Worked in past 12 months' },
+    { id: 'edu',       label: 'Post-secondary education' },
+    { id: 'hh3',       label: 'Household size ≥ 3' },
+    { id: 'married',   label: 'Married' },
+    { id: 'widowed',   label: 'Widowed / Divorced' },
+  ];
+
+  const rightNodes = [
+    { id: 'asthma',label: 'Asthma' },
+    { id: 'cpd',   label: 'Chronic pulmonary disease' },
+    { id: 'mi',    label: 'Myocardial infarction' },
+    { id: 'stroke',label: 'Stroke' },
+    { id: 'arth',  label: 'Arthrosis' },
+    { id: 'renal', label: 'Renal disease' },
+    { id: 'dep',   label: 'Depression' },
+  ];
+
+  // Data updated to strictly separate Male and Female exact values for 'both' categories
+  const links = [
+    { s: 'hh3',     t: 'asthma', sex: 'female', dir: 'pos', orVal: '1.67' },
+    { s: 'married', t: 'asthma', sex: 'female', dir: 'neg', orVal: '0.61' },
+    { s: 'widowed', t: 'asthma', sex: 'female', dir: 'neg', orVal: '0.64' },
+    { s: 'work',    t: 'cpd',    sex: 'male',   dir: 'pos', orVal: '1.60' },
+    { s: 'hh3',     t: 'mi',     sex: 'female', dir: 'pos', orVal: '1.51' },
+    { s: 'work',    t: 'mi',     sex: 'male',   dir: 'pos', orVal: '1.56' },
+    { s: 'hh3',     t: 'stroke', sex: 'female', dir: 'pos', orVal: '1.22' },
+    { s: 'edu',     t: 'arth',   sex: 'female', dir: 'pos', orVal: '1.35' },
+    { s: 'hh3',     t: 'arth',   sex: 'both',   dir: 'pos', orValF: '1.42', orValM: '1.47' }, 
+    { s: 'married', t: 'arth',   sex: 'male',   dir: 'neg', orVal: '0.72' },
+    { s: 'widowed', t: 'arth',   sex: 'male',   dir: 'neg', orVal: '0.63' },
+    { s: 'work',    t: 'arth',   sex: 'male',   dir: 'pos', orVal: '1.40' },
+    { s: 'widowed', t: 'renal',  sex: 'male',   dir: 'neg', orVal: '0.52' },
+    { s: 'hh3',     t: 'dep',    sex: 'both',   dir: 'pos', orValF: '1.63', orValM: '1.51' },
+    { s: 'married', t: 'dep',    sex: 'both',   dir: 'neg', orValF: '0.77', orValM: '0.72' },
+    { s: 'widowed', t: 'dep',    sex: 'both',   dir: 'neg', orValF: '0.77', orValM: '0.73' },
+  ];
+
+  const sigOrrLinks = [
+    { s: 'hh3',     t: 'asthma', val: '1.54' },
+    { s: 'work',    t: 'mi',     val: '0.76' },
+    { s: 'edu',     t: 'arth',   val: '1.32' },
+    { s: 'widowed', t: 'renal',  val: '1.54' }
+  ];
+
+  const padY = 50, padX = 180;
+  const lX = padX, rX = W - padX;
+
+  function yPos(nodes, i) {
+    const total = nodes.length;
+    const usableH = H - 2 * padY;
+    return padY + (i / (total - 1)) * usableH;
+  }
+
+  const leftMap  = Object.fromEntries(leftNodes.map((n, i)  => [n.id, { ...n, x: lX, y: yPos(leftNodes, i) }]));
+  const rightMap = Object.fromEntries(rightNodes.map((n, i) => [n.id, { ...n, x: rX, y: yPos(rightNodes, i) }]));
+
+  const sexColor = { 
+    male: '#648FFF',   
+    female: '#FE6100', 
+    both: '#DC267F'    
+  }; 
+
+  const linkGroup = svg.append('g').attr('class', 'links');
+
+  const orrSel = linkGroup.selectAll('path.orr-glow')
+    .data(sigOrrLinks)
+    .join('path')
+    .attr('class', 'orr-glow')
+    .attr('d', d => {
+      const src = leftMap[d.s], tgt = rightMap[d.t];
+      const mx = (src.x + tgt.x) / 2;
+      return `M${src.x},${src.y} C${mx},${src.y} ${mx},${tgt.y} ${tgt.x},${tgt.y}`;
+    })
+    .attr('fill', 'none')
+    .attr('stroke', '#FFB000') 
+    .attr('stroke-width', 12) 
+    .attr('opacity', 0) 
+    .style('mix-blend-mode', 'multiply'); 
+
+  const linkSel = linkGroup.selectAll('path.main-link')
+    .data(links)
+    .join('path')
+    .attr('class', 'main-link')
+    .attr('d', d => {
+      const src = leftMap[d.s], tgt = rightMap[d.t];
+      const mx = (src.x + tgt.x) / 2;
+      return `M${src.x},${src.y} C${mx},${src.y} ${mx},${tgt.y} ${tgt.x},${tgt.y}`;
+    })
+    .attr('fill', 'none')
+    .attr('stroke', d => sexColor[d.sex])
+    .attr('stroke-width', 2.5)
+    .attr('stroke-dasharray', d => d.dir === 'neg' ? '6,5' : null)
+    .attr('opacity', 0); 
+
+  function animateEntrance() {
+    orrSel.transition().duration(800).delay(200).attr('opacity', 0.6);
+
+    linkSel.each(function(d) {
+        const path = d3.select(this);
+        const totalLength = this.getTotalLength();
+        const baseDasharray = d.dir === 'neg' ? '6,5' : ''; 
+        const drawDasharray = `${totalLength} ${totalLength}`; 
+        
+        path
+          .attr('opacity', 0.9)
+          .attr('stroke-dasharray', drawDasharray) 
+          .attr('stroke-dashoffset', totalLength) 
+          .transition()
+            .duration(1200) 
+            .delay(100 + (parseInt(d.s.length + d.t.length) * 10)) 
+            .ease(d3.easeCubicOut)
+            .attr('stroke-dashoffset', 0) 
+            .on('end', () => {
+                path.attr('stroke-dasharray', baseDasharray || null);
+            });
+    });
+  }
+
+  const nodeR = 14;
+  const leftColor  = '#525252'; 
+  const rightColor = '#8D8D8D'; 
+
+  function drawNodes(sel, nodeMap, anchor) {
+    const g = svg.append('g');
+    Object.values(nodeMap).forEach(n => {
+      const ng = g.append('g')
+        .attr('transform', `translate(${n.x},${n.y})`)
+        .style('cursor', 'pointer');
+
+      ng.append('circle')
+        .attr('r', nodeR)
+        .attr('fill', anchor === 'left' ? leftColor : rightColor)
+        .attr('stroke', '#ffffff')
+        .attr('stroke-width', 2)
+        .style('box-shadow', '0 2px 4px rgba(0,0,0,0.2)');
+
+      ng.append('text')
+        .attr('x', anchor === 'left' ? -(nodeR + 8) : (nodeR + 8))
+        .attr('y', 4)
+        .attr('text-anchor', anchor === 'left' ? 'end' : 'start')
+        .attr('fill', '#161616')
+        .attr('font-size', '12px')
+        .attr('font-weight', '500')
+        .attr('font-family', "'IBM Plex Sans', 'Segoe UI', sans-serif")
+        .text(n.label);
+
+      ng.on('mouseover', function(event) {
+        const tooltip = document.getElementById('tooltip');
+        const id = n.id;
+        
+        linkSel
+          .attr('opacity', l => (l.s === id || l.t === id) ? 1 : 0.08)
+          .attr('stroke-width', l => (l.s === id || l.t === id) ? 3.5 : 2.5);
+        
+        d3.selectAll('.orr-glow')
+          .attr('opacity', l => (l.s === id || l.t === id) ? 0.9 : 0.1);
+
+        const relevantLinks = links.filter(l => l.s === id || l.t === id);
+        const connectedHTML = relevantLinks.map(l => {
+            
+            const isLeft = (l.s === id);
+            const otherName = isLeft ? rightMap[l.t].label : leftMap[l.s].label;
+            
+            // Generate the colored OR boxes purely without text descriptions
+            let boxedData = '';
+            if (l.sex === 'both') {
+                boxedData = `
+                  <span style="display:inline-block; border: 1.5px solid #FE6100; color: #FE6100; padding: 2px 8px; border-radius: 4px; font-weight: 600; font-size: 0.85em; background: #fff; margin-right: 6px;">OR: ${l.orValF}</span>
+                  <span style="display:inline-block; border: 1.5px solid #648FFF; color: #648FFF; padding: 2px 8px; border-radius: 4px; font-weight: 600; font-size: 0.85em; background: #fff; margin-right: 8px;">OR: ${l.orValM}</span>
+                `;
+            } else {
+                const gColor = l.sex === 'male' ? '#648FFF' : '#FE6100';
+                boxedData = `<span style="display:inline-block; border: 1.5px solid ${gColor}; color: ${gColor}; padding: 2px 8px; border-radius: 4px; font-weight: 600; font-size: 0.85em; background: #fff; margin-right: 8px;">OR: ${l.orVal}</span>`;
+            }
+            
+            const orrMatch = sigOrrLinks.find(o => o.s === l.s && o.t === l.t);
+            
+            // Boxed ORR Value (if significant)
+            const orrBox = orrMatch 
+                ? `<span style="display:inline-block; border: 1.5px solid #FFB000; background: #FFFDF5; padding: 2px 8px; border-radius: 4px; color: #161616; font-weight: 500; font-size: 0.85em;">ORR: ${orrMatch.val}</span>`
+                : '';
+
+            return `
+              <div style="margin-bottom: 12px; white-space: nowrap; display: flex; flex-direction: column;">
+                <strong style="color:#111; font-size:1.05em; margin-bottom: 6px;">${otherName}</strong>
+                <div style="display: flex; align-items: center;">
+                    ${boxedData} ${orrBox}
+                </div>
+              </div>`;
+        }).join('');
+          
+        const headColor = anchor === 'left' ? leftColor : rightColor; 
+        tooltip.innerHTML = `<h4 style="margin-bottom:14px; color:${headColor}; border-bottom:1px solid #e0e0e0; padding-bottom:6px; font-weight:600;">${n.label}</h4>${connectedHTML || 'No significant links'}`;
+        
+        // Positioning Logic
+        const pctX = (n.x / W) * 100;
+        const pctY = (n.y / H) * 100;
+
+        tooltip.style.top = '';
+        tooltip.style.bottom = '';
+        tooltip.style.left = '';
+        tooltip.style.transform = '';
+
+        const topSafety = 80;
+        const bottomSafety = 340;
+        
+        if (anchor === 'left') {
+            tooltip.style.left = `calc(${pctX}% + 24px)`;
+        } else {
+            tooltip.style.left = `calc(${pctX}% - 24px)`;
+        }
+
+        if (n.y < topSafety) {
+            tooltip.style.top = '10px';
+            tooltip.style.transform = anchor === 'left' ? 'translate(0, 0)' : 'translate(-100%, 0)';
+        } else if (n.y > bottomSafety) {
+            tooltip.style.bottom = '10px';
+            tooltip.style.transform = anchor === 'left' ? 'translate(0, 0)' : 'translate(-100%, 0)';
+        } else {
+            tooltip.style.top = `${pctY}%`;
+            tooltip.style.transform = anchor === 'left' ? 'translate(0, -50%)' : 'translate(-100%, -50%)';
+        }
+        
+        tooltip.style.opacity = '1';
+      })
+      .on('mouseout', function() {
+        linkSel.attr('opacity', 0.9).attr('stroke-width', 2.5);
+        d3.selectAll('.orr-glow').attr('opacity', 0.6);
+        document.getElementById('tooltip').style.opacity = '0';
+      });
+    });
+  }
+
+  drawNodes(null, leftMap,  'left');
+  drawNodes(null, rightMap, 'right');
+
+  svg.append('text')
+    .attr('x', lX).attr('y', 18)
+    .attr('text-anchor', 'middle')
+    .attr('fill', '#161616').attr('font-size', '13px').attr('font-weight', '600')
+    .text('Gender / Socioeconomic Factors');
+
+  svg.append('text')
+    .attr('x', rX).attr('y', 18)
+    .attr('text-anchor', 'middle')
+    .attr('fill', '#161616').attr('font-size', '13px').attr('font-weight', '600')
+    .text('Chronic Disease Comorbidities');
+
+  setTimeout(animateEntrance, 100);
+
+</script>
+</body>
+</html>

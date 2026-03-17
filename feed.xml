@@ -1,12 +1,234 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://sd-lindner.github.io/feed.xml" rel="self" type="application/atom+xml"/><link href="https://sd-lindner.github.io/" rel="alternate" type="text/html" hreflang="en"/><updated>2026-02-06T14:08:10+00:00</updated><id>https://sd-lindner.github.io/feed.xml</id><title type="html">blank</title><subtitle>Data Scientist &amp; Complex Systems Researcher. Applying network science and machine learning to healthcare, epidemiology, and natural language processing. </subtitle><entry><title type="html">Google Gemini updates: Flash 1.5, Gemma 2 and Project Astra</title><link href="https://sd-lindner.github.io/blog/2024/google-gemini-updates-flash-15-gemma-2-and-project-astra/" rel="alternate" type="text/html" title="Google Gemini updates: Flash 1.5, Gemma 2 and Project Astra"/><published>2024-05-14T00:00:00+00:00</published><updated>2024-05-14T00:00:00+00:00</updated><id>https://sd-lindner.github.io/blog/2024/google-gemini-updates-flash-15-gemma-2-and-project-astra</id><content type="html" xml:base="https://sd-lindner.github.io/blog/2024/google-gemini-updates-flash-15-gemma-2-and-project-astra/"><![CDATA[<p>Learn more:Learn more:Learn more:Learn more:Learn more:Learn more:May 14, 2024 We’re introducing a series of updates across the Gemini family of models, including the new 1.5 Flash, our lightweight model for speed and efficiency, and Project Astra, our vision for the future of AI assistants. In December, we launched our first natively multimodal model Gemini 1.0 in three sizes: Ultra, Pro and Nano. Just a few months later we released 1.5 Pro, with enhanced performance and a breakthrough long context window of 1 million tokens.Developers and enterprise customers have been putting 1.5 Pro to use in incredible ways and finding its long context window, multimodal reasoning capabilities and impressive overall performance incredibly useful.We know from user feedback that some applications need lower latency and a lower cost to serve. This inspired us to keep innovating, so today, we’re introducing Gemini 1.5 Flash: a model that’s lighter-weight than 1.5 Pro, and designed to be fast and efficient to serve at scale.Both 1.5 Pro and 1.5 Flash are available in public preview with a 1 million token context window in Google AI Studio and Vertex AI. And now, 1.5 Pro is also available with a 2 million token context window via waitlist to developers using the API and to Google Cloud customers.We’re also introducing updates across the Gemini family of models, announcing our next generation of open models, Gemma 2, and sharing progress on the future of AI assistants, with Project Astra.Context lengths of leading foundation models compared with Gemini 1.5’s 2 million token capability1.5 Flash is the newest addition to the Gemini model family and the fastest Gemini model served in the API. It’s optimized for high-volume, high-frequency tasks at scale, is more cost-efficient to serve and features our breakthrough long context window.While it’s a lighter weight model than 1.5 Pro, it’s highly capable of multimodal reasoning across vast amounts of information and delivers impressive quality for its size.The new Gemini 1.5 Flash model is optimized for speed and efficiency, is highly capable of multimodal reasoning and features our breakthrough long context window.1.5 Flash excels at summarization, chat applications, image and video captioning, data extraction from long documents and tables, and more. This is because it’s been trained by 1.5 Pro through a process called “distillation,” where the most essential knowledge and skills from a larger model are transferred to a smaller, more efficient model.Read more about 1.5 Flash in our updated Gemini 1.5 technical report, on the Gemini technology page, and learn about 1.5 Flash’s availability and pricing.Over the last few months, we’ve significantly improved 1.5 Pro, our best model for general performance across a wide range of tasks.Beyond extending its context window to 2 million tokens, we’ve enhanced its code generation, logical reasoning and planning, multi-turn conversation, and audio and image understanding through data and algorithmic advances. We see strong improvements on public and internal benchmarks for each of these tasks.1.5 Pro can now follow increasingly complex and nuanced instructions, including ones that specify product-level behavior involving role, format and style. We’ve improved control over the model’s responses for specific use cases, like crafting the persona and response style of a chat agent or automating workflows through multiple function calls. And we’ve enabled users to steer model behavior by setting system instructions.We added audio understanding in the Gemini API and Google AI Studio, so 1.5 Pro can now reason across image and audio for videos uploaded in Google AI Studio. And we’re now integrating 1.5 Pro into Google products, including Gemini Advanced and in Workspace apps.Read more about 1.5 Pro in our updated Gemini 1.5 technical report and on the Gemini technology page.Gemini Nano is expanding beyond text-only inputs to include images as well. Starting with Pixel, applications using Gemini Nano with Multimodality will be able to understand the world the way people do — not just through text, but also through sight, sound and spoken language.Read more about Gemini 1.0 Nano on Android.Today, we’re also sharing a series of updates to Gemma, our family of open models built from the same research and technology used to create the Gemini models.We’re announcing Gemma 2, our next generation of open models for responsible AI innovation. Gemma 2 has a new architecture designed for breakthrough performance and efficiency, and will be available in new sizes.The Gemma family is also expanding with PaliGemma, our first vision-language model inspired by PaLI-3. And we’ve upgraded our Responsible Generative AI Toolkit with LLM Comparator for evaluating the quality of model responses.Read more on the Developer blog.As part of Google DeepMind’s mission to build AI responsibly to benefit humanity, we’ve always wanted to develop universal AI agents that can be helpful in everyday life. That’s why today, we’re sharing our progress in building the future of AI assistants with Project Astra (advanced seeing and talking responsive agent).To be truly useful, an agent needs to understand and respond to the complex and dynamic world just like people do — and take in and remember what it sees and hears to understand context and take action. It also needs to be proactive, teachable and personal, so users can talk to it naturally and without lag or delay.While we’ve made incredible progress developing AI systems that can understand multimodal information, getting response time down to something conversational is a difficult engineering challenge. Over the past few years, we’ve been working to improve how our models perceive, reason and converse to make the pace and quality of interaction feel more natural.Building on Gemini, we’ve developed prototype agents that can process information faster by continuously encoding video frames, combining the video and speech input into a timeline of events, and caching this information for efficient recall.By leveraging our leading speech models, we also enhanced how they sound, giving the agents a wider range of intonations. These agents can better understand the context they’re being used in, and respond quickly, in conversation.With technology like this, it’s easy to envision a future where people could have an expert AI assistant by their side, through a phone or glasses. And some of these capabilities are coming to Google products, like the Gemini app and web experience, later this year.We’ve made incredible progress so far with our family of Gemini models, and we’re always striving to advance the state-of-the-art even further. By investing in a relentless production line of innovation, we’re able to explore new ideas at the frontier, while also unlocking the possibility of new and exciting Gemini use cases.Learn more about Gemini and its capabilities. Your information will be used in accordance with Google’s privacy policy.</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      Done. Just one step more.
-    
-      Check your inbox to confirm your subscription.
-    You are already subscribed to our newsletter.
-    You can also subscribe with a
-    different email address
-    
-    .
-    
-  Let’s stay in touch. Get the latest news from Google in your inbox.
-          Follow Us
-</code></pre></div></div>]]></content><author><name></name></author><category term="external-posts"/><category term="google"/><summary type="html"><![CDATA[We’re sharing updates across our Gemini family of models and a glimpse of Project Astra, our vision for the future of AI assistants.]]></summary></entry><entry><title type="html">Displaying External Posts on Your al-folio Blog</title><link href="https://sd-lindner.github.io/blog/2022/displaying-external-posts-on-your-al-folio-blog/" rel="alternate" type="text/html" title="Displaying External Posts on Your al-folio Blog"/><published>2022-04-23T23:20:09+00:00</published><updated>2022-04-23T23:20:09+00:00</updated><id>https://sd-lindner.github.io/blog/2022/displaying-external-posts-on-your-al-folio-blog</id><content type="html" xml:base="https://sd-lindner.github.io/blog/2022/displaying-external-posts-on-your-al-folio-blog/"><![CDATA[<h3>External Posts on Your al-folio Blog</h3> <p>If you prefer publishing blog posts on medium.com or other external sources, starting version v0.5.0, <a href="https://github.com/alshedivat/al-folio">al-folio</a> lets you to display your external posts in the blog feed of your website! 🎉🎉</p> <p>Configuring external sources of super simple. After upgrading to v0.5.0, just add the following section to your _config.yml:</p> <pre>external_sources:<br />  - name: medium.com  # name of the source (arbitrary string)<br />    rss_url: <a href="https://medium.com/@al-folio/feed">https://medium.com/@&lt;your-medium-username&gt;/feed</a></pre> <p>The example above adds your medium.com blog post feed as an external source. But you can add arbitrary RSS feeds as sources.</p> <p>Any questions or suggestions? 👉 Start <a href="https://github.com/alshedivat/al-folio/discussions">a discussion on GitHub</a>!</p> <p><img src="https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=b60a1d241a0a" width="1" height="1" alt=""/></p>]]></content><author><name></name></author><category term="external-posts"/><category term="medium"/></entry></feed>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://sd-lindner.github.io/feed.xml" rel="self" type="application/atom+xml"/><link href="https://sd-lindner.github.io/" rel="alternate" type="text/html" hreflang="en"/><updated>2026-03-17T11:21:56+00:00</updated><id>https://sd-lindner.github.io/feed.xml</id><title type="html">blank</title><subtitle>Data Scientist &amp; Complex Systems Researcher. Applying network science and machine learning to healthcare, epidemiology, and natural language processing. </subtitle><entry><title type="html">Revisiting gender, socioeconomics, and hypertension comorbidities</title><link href="https://sd-lindner.github.io/blog/2026/hypertension-gender-network/" rel="alternate" type="text/html" title="Revisiting gender, socioeconomics, and hypertension comorbidities"/><published>2026-03-16T11:00:00+00:00</published><updated>2026-03-16T11:00:00+00:00</updated><id>https://sd-lindner.github.io/blog/2026/hypertension-gender-network</id><content type="html" xml:base="https://sd-lindner.github.io/blog/2026/hypertension-gender-network/"><![CDATA[<p>A while back we published a paper examining how socioeconomic gender factors—employment, education, marital status, household size—relate to chronic disease comorbidities in people with hypertension, and whether those associations differ between males and females <a class="citation" href="#jpm2024socioeconomic">(Lindner &amp; others, 2024)</a>. The study analyzed data from 74,748 people with hypertension drawn from the European Health Interview Survey (EHIS, 2013–2015) across 30 countries, stratified by national gender inequality.</p> <p>Hypertension is one of the most prevalent chronic conditions worldwide and a major driver of comorbidity burden. What often goes unexamined is how the <em>social</em> context of being male or female—not just biology—shapes which other diseases accumulate alongside it. We identified 47 statistically significant sex differences in how socioeconomic factors relate to comorbidities like myocardial infarction, arthrosis, renal disease, and depression in people with hypertension. A few findings stood out:</p> <ul> <li><strong>Marriage raises hypertension risk in women, not men.</strong> Married or partnered women with hypertension had 30% higher odds of the condition compared to single women; in men, only the <em>loss</em> of a partner (widowed/divorced) was associated with elevated risk.</li> <li><strong>Employment and cardiac risk diverge by sex.</strong> Among employed people with hypertension, myocardial infarction associations were generally stronger in males—but in countries with high gender inequality, employed women actually showed <em>higher</em> cardiac odds than men, consistent with a double-burden hypothesis.</li> <li><strong>Higher education paradoxically linked to arthrosis in women.</strong> Post-secondary-educated women with hypertension had significantly higher arthrosis odds; men did not, suggesting that professional and lifestyle factors interact with disease differently by sex.</li> <li><strong>Country-level gender inequality amplifies these patterns.</strong> Effects were strongest in high Gender Inequality Index countries, pointing to structural gender context as a key modulator—not just individual-level biology.</li> </ul> <p>I recently revisited the findings and built a new interactive visualization to make the structure of results more intuitive. The bipartite network below connects gender/socioeconomic factors (left) to comorbidities (right). Each link represents a statistically significant association from the logistic regression models. Color encodes which group showed the significant association (blue = male, orange = female, pink = both), line style encodes direction (solid = risk, dashed = protective), and the amber highlight marks associations where the odds ratio <em>ratio</em> (ORR) between sexes was itself significant—i.e., where the effect genuinely differed between males and females.</p> <p>Hover over any node to see the exact odds ratios.</p> <style>:root{--net-text:#161616;--net-node-left:#525252;--net-node-right:#8d8d8d;--net-node-stroke:#fff;--net-legend-bg:#f4f4f4;--net-legend-border:#e0e0e0;--net-legend-text:#393939;--net-tt-bg:#fff;--net-tt-color:#161616;--net-tt-border:#c6c6c6;--net-tt-sep:#e0e0e0;--net-or-bg:#fff;--net-orr-bg:#fffdf5}html[data-theme='dark']{--net-text:#e8e8f0;--net-node-left:#7a7a99;--net-node-right:#9898b8;--net-node-stroke:#1a1a2e;--net-legend-bg:#252540;--net-legend-border:#4a4a6a;--net-legend-text:#a0a0b8;--net-tt-bg:#252540;--net-tt-color:#e8e8f0;--net-tt-border:#4a4a6a;--net-tt-sep:#3a3a52;--net-or-bg:#1a1a2e;--net-orr-bg:#241800}.network-wrap *{box-sizing:border-box}.network-wrap{width:100%;max-width:900px;margin:2rem auto;font-family:'IBM Plex Sans','Segoe UI',Tahoma,Geneva,Verdana,sans-serif}#net-svg-container{position:relative;width:100%}#net-svg-container svg{width:100%;height:auto;display:block}.net-legend{display:flex;gap:16px;justify-content:center;margin-top:14px;flex-wrap:wrap;padding:0 10px}.net-legend-item{display:flex;align-items:center;gap:8px;color:var(--net-legend-text);font-size:.82em;background:var(--net-legend-bg);border:1px solid var(--net-legend-border);padding:5px 10px;border-radius:4px;font-weight:500}.net-legend-line{width:24px;height:4px;border-radius:2px;flex-shrink:0}.net-tooltip{position:absolute;background:var(--net-tt-bg);color:var(--net-tt-color);padding:14px 18px;border-radius:6px;font-size:.88em;pointer-events:none;opacity:0;transition:opacity .2s ease;border:1px solid var(--net-tt-border);width:max-content;max-width:380px;line-height:1.4;box-shadow:0 6px 20px rgba(0,0,0,0.15);z-index:10}</style> <div class="network-wrap"> <div id="net-svg-container"> <svg id="net-network" viewBox="0 0 820 420" preserveAspectRatio="xMidYMid meet"></svg> <div class="net-tooltip" id="net-tooltip"></div> </div> <div class="net-legend"> <div class="net-legend-item"> <div class="net-legend-line" style="background:#648FFF;"></div> <span>Male sig.</span> </div> <div class="net-legend-item"> <div class="net-legend-line" style="background:#FE6100;"></div> <span>Female sig.</span> </div> <div class="net-legend-item"> <div class="net-legend-line" style="background:#DC267F;"></div> <span>Both sig.</span> </div> <div class="net-legend-item"> <div class="net-legend-line" style="background:#888;"></div> <span>OR &gt; 1 (risk)</span> </div> <div class="net-legend-item"> <div class="net-legend-line" style="border-top: 2px dashed #888; background: transparent; height: 0;"></div> <span>OR &lt; 1 (protective)</span> </div> <div class="net-legend-item"> <div class="net-legend-line" style="background:#FFB000; height:8px; border: 1px solid #d49300; opacity: 0.8;"></div> <span>ORR sig. (sex difference)</span> </div> </div> </div> <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script> <script>
+(function() {
+  const W = 820, H = 420;
+  const svg = d3.select('#net-network');
+
+  function getColors() {
+    const dark = document.documentElement.getAttribute('data-theme') === 'dark';
+    return {
+      text: dark ? '#e8e8f0' : '#161616',
+      nodeLeft: dark ? '#7a7a99' : '#525252',
+      nodeRight: dark ? '#9898b8' : '#8D8D8D',
+      nodeStroke: dark ? '#1a1a2e' : '#ffffff',
+      orrBlend: dark ? 'screen' : 'multiply',
+      orBg: dark ? '#1a1a2e' : '#ffffff',
+      orrBoxBg: dark ? '#241800' : '#FFFDF5',
+      sepColor: dark ? '#3a3a52' : '#e0e0e0',
+    };
+  }
+
+  function applyColors() {
+    const c = getColors();
+    svg.selectAll('.net-node-circle-left').attr('fill', c.nodeLeft).attr('stroke', c.nodeStroke);
+    svg.selectAll('.net-node-circle-right').attr('fill', c.nodeRight).attr('stroke', c.nodeStroke);
+    svg.selectAll('.net-node-label').attr('fill', c.text);
+    svg.selectAll('.net-header').attr('fill', c.text);
+    orrSel.style('mix-blend-mode', c.orrBlend);
+  }
+
+  const leftNodes = [
+    { id: 'work',    label: 'Worked in past 12 months' },
+    { id: 'edu',     label: 'Post-secondary education' },
+    { id: 'hh3',     label: 'Household size \u2265 3' },
+    { id: 'married', label: 'Married' },
+    { id: 'widowed', label: 'Widowed / Divorced' },
+  ];
+
+  const rightNodes = [
+    { id: 'asthma', label: 'Asthma' },
+    { id: 'cpd',    label: 'Chronic pulmonary disease' },
+    { id: 'mi',     label: 'Myocardial infarction' },
+    { id: 'stroke', label: 'Stroke' },
+    { id: 'arth',   label: 'Arthrosis' },
+    { id: 'renal',  label: 'Renal disease' },
+    { id: 'dep',    label: 'Depression' },
+  ];
+
+  const links = [
+    { s: 'hh3',     t: 'asthma', sex: 'female', dir: 'pos', orVal: '1.67' },
+    { s: 'married', t: 'asthma', sex: 'female', dir: 'neg', orVal: '0.61' },
+    { s: 'widowed', t: 'asthma', sex: 'female', dir: 'neg', orVal: '0.64' },
+    { s: 'work',    t: 'cpd',    sex: 'male',   dir: 'pos', orVal: '1.60' },
+    { s: 'hh3',     t: 'mi',     sex: 'female', dir: 'pos', orVal: '1.51' },
+    { s: 'work',    t: 'mi',     sex: 'male',   dir: 'pos', orVal: '1.56' },
+    { s: 'hh3',     t: 'stroke', sex: 'female', dir: 'pos', orVal: '1.22' },
+    { s: 'edu',     t: 'arth',   sex: 'female', dir: 'pos', orVal: '1.35' },
+    { s: 'hh3',     t: 'arth',   sex: 'both',   dir: 'pos', orValF: '1.42', orValM: '1.47' },
+    { s: 'married', t: 'arth',   sex: 'male',   dir: 'neg', orVal: '0.72' },
+    { s: 'widowed', t: 'arth',   sex: 'male',   dir: 'neg', orVal: '0.63' },
+    { s: 'work',    t: 'arth',   sex: 'male',   dir: 'pos', orVal: '1.40' },
+    { s: 'widowed', t: 'renal',  sex: 'male',   dir: 'neg', orVal: '0.52' },
+    { s: 'hh3',     t: 'dep',    sex: 'both',   dir: 'pos', orValF: '1.63', orValM: '1.51' },
+    { s: 'married', t: 'dep',    sex: 'both',   dir: 'neg', orValF: '0.77', orValM: '0.72' },
+    { s: 'widowed', t: 'dep',    sex: 'both',   dir: 'neg', orValF: '0.77', orValM: '0.73' },
+  ];
+
+  const sigOrrLinks = [
+    { s: 'hh3',     t: 'asthma', val: '1.54' },
+    { s: 'work',    t: 'mi',     val: '0.76' },
+    { s: 'edu',     t: 'arth',   val: '1.32' },
+    { s: 'widowed', t: 'renal',  val: '1.54' },
+  ];
+
+  const padY = 50, padX = 180;
+  const lX = padX, rX = W - padX;
+
+  function yPos(nodes, i) {
+    return padY + (i / (nodes.length - 1)) * (H - 2 * padY);
+  }
+
+  const leftMap  = Object.fromEntries(leftNodes.map((n, i)  => [n.id, { ...n, x: lX, y: yPos(leftNodes, i) }]));
+  const rightMap = Object.fromEntries(rightNodes.map((n, i) => [n.id, { ...n, x: rX, y: yPos(rightNodes, i) }]));
+
+  const sexColor = { male: '#648FFF', female: '#FE6100', both: '#DC267F' };
+
+  const linkGroup = svg.append('g').attr('class', 'links');
+
+  const orrSel = linkGroup.selectAll('path.orr-glow')
+    .data(sigOrrLinks).join('path').attr('class', 'orr-glow')
+    .attr('d', d => {
+      const src = leftMap[d.s], tgt = rightMap[d.t];
+      const mx = (src.x + tgt.x) / 2;
+      return `M${src.x},${src.y} C${mx},${src.y} ${mx},${tgt.y} ${tgt.x},${tgt.y}`;
+    })
+    .attr('fill', 'none').attr('stroke', '#FFB000').attr('stroke-width', 12)
+    .attr('opacity', 0);
+
+  const linkSel = linkGroup.selectAll('path.main-link')
+    .data(links).join('path').attr('class', 'main-link')
+    .attr('d', d => {
+      const src = leftMap[d.s], tgt = rightMap[d.t];
+      const mx = (src.x + tgt.x) / 2;
+      return `M${src.x},${src.y} C${mx},${src.y} ${mx},${tgt.y} ${tgt.x},${tgt.y}`;
+    })
+    .attr('fill', 'none').attr('stroke', d => sexColor[d.sex])
+    .attr('stroke-width', 2.5)
+    .attr('stroke-dasharray', d => d.dir === 'neg' ? '6,5' : null)
+    .attr('opacity', 0);
+
+  function animateEntrance() {
+    orrSel.transition().duration(800).delay(200).attr('opacity', 0.6);
+    linkSel.each(function(d) {
+      const path = d3.select(this);
+      const totalLength = this.getTotalLength();
+      const baseDasharray = d.dir === 'neg' ? '6,5' : '';
+      path.attr('opacity', 0.9)
+        .attr('stroke-dasharray', `${totalLength} ${totalLength}`)
+        .attr('stroke-dashoffset', totalLength)
+        .transition().duration(1200)
+        .delay(100 + (parseInt(d.s.length + d.t.length) * 10))
+        .ease(d3.easeCubicOut)
+        .attr('stroke-dashoffset', 0)
+        .on('end', () => { path.attr('stroke-dasharray', baseDasharray || null); });
+    });
+  }
+
+  const nodeR = 14;
+
+  function drawNodes(nodeMap, anchor) {
+    const g = svg.append('g');
+    Object.values(nodeMap).forEach(n => {
+      const ng = g.append('g')
+        .attr('transform', `translate(${n.x},${n.y})`)
+        .style('cursor', 'pointer');
+
+      ng.append('circle').attr('r', nodeR)
+        .attr('class', anchor === 'left' ? 'net-node-circle-left' : 'net-node-circle-right')
+        .attr('stroke-width', 2);
+
+      ng.append('text')
+        .attr('class', 'net-node-label')
+        .attr('x', anchor === 'left' ? -(nodeR + 8) : (nodeR + 8))
+        .attr('y', 4)
+        .attr('text-anchor', anchor === 'left' ? 'end' : 'start')
+        .attr('font-size', '12px').attr('font-weight', '500')
+        .attr('font-family', "'IBM Plex Sans', 'Segoe UI', sans-serif")
+        .text(n.label);
+
+      ng.on('mouseover', function(event) {
+        const c = getColors();
+        const tooltip = document.getElementById('net-tooltip');
+        const id = n.id;
+
+        linkSel
+          .attr('opacity', l => (l.s === id || l.t === id) ? 1 : 0.08)
+          .attr('stroke-width', l => (l.s === id || l.t === id) ? 3.5 : 2.5);
+        d3.selectAll('.orr-glow')
+          .attr('opacity', l => (l.s === id || l.t === id) ? 0.9 : 0.1);
+
+        const relevantLinks = links.filter(l => l.s === id || l.t === id);
+        const connectedHTML = relevantLinks.map(l => {
+          const isLeft = (l.s === id);
+          const otherName = isLeft ? rightMap[l.t].label : leftMap[l.s].label;
+          let boxedData = '';
+          if (l.sex === 'both') {
+            boxedData = `
+              <span style="display:inline-block;border:1.5px solid #FE6100;color:#FE6100;padding:2px 8px;border-radius:4px;font-weight:600;font-size:0.85em;background:${c.orBg};margin-right:6px;">OR: ${l.orValF}</span>
+              <span style="display:inline-block;border:1.5px solid #648FFF;color:#648FFF;padding:2px 8px;border-radius:4px;font-weight:600;font-size:0.85em;background:${c.orBg};margin-right:8px;">OR: ${l.orValM}</span>`;
+          } else {
+            const gColor = l.sex === 'male' ? '#648FFF' : '#FE6100';
+            boxedData = `<span style="display:inline-block;border:1.5px solid ${gColor};color:${gColor};padding:2px 8px;border-radius:4px;font-weight:600;font-size:0.85em;background:${c.orBg};margin-right:8px;">OR: ${l.orVal}</span>`;
+          }
+          const orrMatch = sigOrrLinks.find(o => o.s === l.s && o.t === l.t);
+          const orrBox = orrMatch
+            ? `<span style="display:inline-block;border:1.5px solid #FFB000;background:${c.orrBoxBg};padding:2px 8px;border-radius:4px;color:${c.text};font-weight:500;font-size:0.85em;">ORR: ${orrMatch.val}</span>`
+            : '';
+          return `<div style="margin-bottom:12px;white-space:nowrap;display:flex;flex-direction:column;">
+            <strong style="color:${c.text};font-size:1.05em;margin-bottom:6px;">${otherName}</strong>
+            <div style="display:flex;align-items:center;">${boxedData}${orrBox}</div>
+          </div>`;
+        }).join('');
+
+        const headColor = anchor === 'left' ? c.nodeLeft : c.nodeRight;
+        tooltip.innerHTML = `<h4 style="margin-bottom:14px;color:${headColor};border-bottom:1px solid ${c.sepColor};padding-bottom:6px;font-weight:600;">${n.label}</h4>${connectedHTML || 'No significant links'}`;
+
+        const pctX = (n.x / W) * 100;
+        const pctY = (n.y / H) * 100;
+        tooltip.style.top = '';
+        tooltip.style.bottom = '';
+        tooltip.style.left = '';
+        tooltip.style.transform = '';
+
+        if (anchor === 'left') {
+          tooltip.style.left = `calc(${pctX}% + 24px)`;
+        } else {
+          tooltip.style.left = `calc(${pctX}% - 24px)`;
+        }
+
+        if (n.y < 80) {
+          tooltip.style.top = '10px';
+          tooltip.style.transform = anchor === 'left' ? 'translate(0,0)' : 'translate(-100%,0)';
+        } else if (n.y > 340) {
+          tooltip.style.bottom = '10px';
+          tooltip.style.transform = anchor === 'left' ? 'translate(0,0)' : 'translate(-100%,0)';
+        } else {
+          tooltip.style.top = `${pctY}%`;
+          tooltip.style.transform = anchor === 'left' ? 'translate(0,-50%)' : 'translate(-100%,-50%)';
+        }
+        tooltip.style.opacity = '1';
+      })
+      .on('mouseout', function() {
+        linkSel.attr('opacity', 0.9).attr('stroke-width', 2.5);
+        d3.selectAll('.orr-glow').attr('opacity', 0.6);
+        document.getElementById('net-tooltip').style.opacity = '0';
+      });
+    });
+  }
+
+  drawNodes(leftMap, 'left');
+  drawNodes(rightMap, 'right');
+
+  svg.append('text').attr('class', 'net-header').attr('x', lX).attr('y', 18).attr('text-anchor', 'middle')
+    .attr('font-size', '13px').attr('font-weight', '600')
+    .text('Gender / Socioeconomic Factors');
+
+  svg.append('text').attr('class', 'net-header').attr('x', rX).attr('y', 18).attr('text-anchor', 'middle')
+    .attr('font-size', '13px').attr('font-weight', '600')
+    .text('Chronic Disease Comorbidities');
+
+  applyColors();
+  new MutationObserver(applyColors).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+
+  setTimeout(animateEntrance, 300);
+})();
+</script> <p>The picture that emerges is one of considerable sex heterogeneity. Living in a larger household (≥ 3 members) is consistently associated with higher odds of multiple comorbidities, but predominantly in females. Marital and widowhood statuses tend to be protective for both sexes against depression, while their protective associations with arthrosis appear specifically in males. Employment during the past year is linked to higher odds of chronic pulmonary disease and arthrosis in males—a pattern likely reflecting occupational exposure.</p> <p>The amber highlights mark four associations where the ORR itself reached significance: household size and asthma, employment and myocardial infarction, education and arthrosis, and widowhood/divorce and renal disease. These are the associations most clearly patterned by biological sex, beyond what the individual OR estimates suggest.</p> <p>The full analysis is available in <a class="citation" href="#jpm2024socioeconomic">(Lindner &amp; others, 2024)</a>.</p>]]></content><author><name></name></author><summary type="html"><![CDATA[A new interactive bipartite network visualization of how gender-related socioeconomic factors associate with chronic disease comorbidities in people with hypertension.]]></summary></entry></feed>
