@@ -40,12 +40,8 @@ The CA embeddings reveal a densely connected positive cluster aligned with isola
 
 ## Technologies
 
-- Python
 - Network Science
 - Correspondence Analysis
 - SHEEP Embedding
 - Large Language Models
 
-## Publication
-
-Fraxanet E., Candellone E., Cvetković D., Lindner S.D., Naushirvanov T., de Lamo E.G. (2025). A multi-method analysis of controversiality in online conversations on DerStandard. *Winter Workshop on Complex Systems (WWCS)*.

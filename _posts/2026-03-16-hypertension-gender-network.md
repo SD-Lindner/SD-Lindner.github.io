@@ -1,48 +1,25 @@
 ---
-layout: page
-title: Sex and Gender in Health Outcomes
-description: Integrating biological sex and socio-cultural gender dimensions into chronic disease research across international cohorts
-img: assets/img/gender_medicine.png
-importance: 1
-category: work
+layout: post
+title: Revisiting gender, socioeconomics, and hypertension comorbidities
+date: 2026-03-16 12:00:00+0100
+description: A new interactive bipartite network visualization of how gender-related socioeconomic factors associate with chronic disease comorbidities in people with hypertension.
 related_publications: true
+published: true
+minutes_read: 3
 ---
 
-## Overview
+A while back we published a paper examining how socioeconomic gender factors—employment, education, marital status, household size—relate to chronic disease comorbidities in people with hypertension, and whether those associations differ between males and females {% cite jpm2024socioeconomic %}. The study analyzed data from 74,748 people with hypertension drawn from the European Health Interview Survey (EHIS, 2013–2015) across 30 countries, stratified by national gender inequality.
 
-Sex and gender are often erroneously used interchangeably in health research, yet both independently influence disease risk, symptom presentation, treatment response, and health outcomes. This research program—part of the GOING-FWD consortium (Gender Outcomes INternational Group: to Further Well-being Development)—develops methodologies and generates evidence on how sex and gender shape health across cardiovascular, metabolic, renal, and neurodegenerative diseases in Austria, Canada, Spain, and Sweden {% cite bmjgh2021goingfwd %}.
+Hypertension is one of the most prevalent chronic conditions worldwide and a major driver of comorbidity burden. What often goes unexamined is how the *social* context of being male or female—not just biology—shapes which other diseases accumulate alongside it. We identified 47 statistically significant sex differences in how socioeconomic factors relate to comorbidities like myocardial infarction, arthrosis, renal disease, and depression in people with hypertension. A few findings stood out:
 
-## Key Contributions
+- **Marriage raises hypertension risk in women, not men.** Married or partnered women with hypertension had 30% higher odds of the condition compared to single women; in men, only the *loss* of a partner (widowed/divorced) was associated with elevated risk.
+- **Employment and cardiac risk diverge by sex.** Among employed people with hypertension, myocardial infarction associations were generally stronger in males—but in countries with high gender inequality, employed women actually showed *higher* cardiac odds than men, consistent with a double-burden hypothesis.
+- **Higher education paradoxically linked to arthrosis in women.** Post-secondary-educated women with hypertension had significantly higher arthrosis odds; men did not, suggesting that professional and lifestyle factors interact with disease differently by sex.
+- **Country-level gender inequality amplifies these patterns.** Effects were strongest in high Gender Inequality Index countries, pointing to structural gender context as a key modulator—not just individual-level biology.
 
-- **GOING-FWD Framework**: Developed a standardized 5-step methodology to retrospectively identify and analyze gender-related factors (identity, roles, relations, institutionalized gender) in existing health datasets
-- **Gender-disease interactions**: Demonstrated that socioeconomic gender variables (education, marital status, employment, household size) differentially impact chronic disease associations between males and females
-- **Cross-country analysis**: Enabled privacy-preserving international comparisons using federated analysis and synthetic data generation
-- **Cardiovascular health metrics**: Assessed country-level differences in cardiovascular health using modified CANHEART indices, revealing distinct sex-gender patterns across populations
+I recently revisited the findings and built a new interactive visualization to make the structure of results more intuitive. The bipartite network below connects gender/socioeconomic factors (left) to comorbidities (right). Each link represents a statistically significant association from the logistic regression models. Color encodes which group showed the significant association (blue = male, orange = female, pink = both), line style encodes direction (solid = risk, dashed = protective), and the amber highlight marks associations where the odds ratio *ratio* (ORR) between sexes was itself significant—i.e., where the effect genuinely differed between males and females.
 
-## Methodology
-
-The research integrates multiple complementary approaches:
-
-1. **Gender Variable Identification**: Compile "wish lists" of gender-related factors based on the Women Health Research Network framework covering identity, roles, relations, and institutionalized gender
-
-2. **Data Harmonization**: Align variables across international datasets using Maelström research guidelines for retrospective harmonization
-
-3. **Privacy-Preserving Analysis**: Apply federated analysis (DataSHIELD) and synthetic data generation to enable cross-jurisdictional pooling while respecting GDPR and local privacy regulations {% cite lindner2023synthetic %}
-
-4. **Statistical Modeling**: Use multivariate regression with interaction terms to quantify how gender variables modify disease associations differently for males and females
-
-## Results
-
-Gender factors—independent of biological sex—emerge as powerful predictors of health outcomes. In a cross-sectional analysis of 74,748 people with hypertension from the European Health Interview Survey across 30 countries {% cite jpm2024socioeconomic %}, we identified 47 significant sex differences in how socioeconomic variables relate to comorbidities including myocardial infarction, arthrosis, renal disease, and depression. Key findings:
-
-- Married women with hypertension face 30% higher odds of the condition compared to single women; in men, only the loss of a partner (widowed/divorced) is associated with elevated risk
-- Employment relates to cardiac risk differently by sex and country-level gender inequality—consistent with a double-burden hypothesis for women
-- Higher education paradoxically increases arthrosis odds in hypertensive women but not men
-- All effects are amplified in countries with high Gender Inequality Index, pointing to structural context rather than individual biology as a key driver
-
-These effects vary by country-level gender inequality, underscoring that gender is a social—not just biological—determinant of health. The interactive network below visualizes the full pattern of associations. Full context in the [accompanying blog post](/blog/2026/hypertension-gender-network/).
-
-The interactive bipartite network connects socioeconomic gender factors (left) to hypertension comorbidities (right). Color encodes the group with the significant association (blue = male, orange = female, pink = both), line style encodes direction (solid = risk, dashed = protective), and amber highlights mark associations where the odds ratio *ratio* between sexes was itself significant. Hover over any node to see exact odds ratios.
+Hover over any node to see the exact odds ratios.
 
 <style>
   :root {
@@ -82,7 +59,10 @@ The interactive bipartite network connects socioeconomic gender factors (left) t
     margin: 2rem auto;
     font-family: 'IBM Plex Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
-  #net-svg-container { position: relative; width: 100%; }
+  #net-svg-container {
+    position: relative;
+    width: 100%;
+  }
   #net-svg-container svg { width: 100%; height: auto; display: block; }
   .net-legend {
     display: flex;
@@ -104,7 +84,12 @@ The interactive bipartite network connects socioeconomic gender factors (left) t
     border-radius: 4px;
     font-weight: 500;
   }
-  .net-legend-line { width: 24px; height: 4px; border-radius: 2px; flex-shrink: 0; }
+  .net-legend-line {
+    width: 24px;
+    height: 4px;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
   .net-tooltip {
     position: absolute;
     background: var(--net-tt-bg);
@@ -130,12 +115,30 @@ The interactive bipartite network connects socioeconomic gender factors (left) t
     <div class="net-tooltip" id="net-tooltip"></div>
   </div>
   <div class="net-legend">
-    <div class="net-legend-item"><div class="net-legend-line" style="background:#648FFF;"></div><span>Male sig.</span></div>
-    <div class="net-legend-item"><div class="net-legend-line" style="background:#FE6100;"></div><span>Female sig.</span></div>
-    <div class="net-legend-item"><div class="net-legend-line" style="background:#DC267F;"></div><span>Both sig.</span></div>
-    <div class="net-legend-item"><div class="net-legend-line" style="background:#888;"></div><span>OR &gt; 1 (risk)</span></div>
-    <div class="net-legend-item"><div class="net-legend-line" style="border-top: 2px dashed #888; background: transparent; height: 0;"></div><span>OR &lt; 1 (protective)</span></div>
-    <div class="net-legend-item"><div class="net-legend-line" style="background:#FFB000; height:8px; border: 1px solid #d49300; opacity: 0.8;"></div><span>ORR sig. (sex difference)</span></div>
+    <div class="net-legend-item">
+      <div class="net-legend-line" style="background:#648FFF;"></div>
+      <span>Male sig.</span>
+    </div>
+    <div class="net-legend-item">
+      <div class="net-legend-line" style="background:#FE6100;"></div>
+      <span>Female sig.</span>
+    </div>
+    <div class="net-legend-item">
+      <div class="net-legend-line" style="background:#DC267F;"></div>
+      <span>Both sig.</span>
+    </div>
+    <div class="net-legend-item">
+      <div class="net-legend-line" style="background:#888;"></div>
+      <span>OR &gt; 1 (risk)</span>
+    </div>
+    <div class="net-legend-item">
+      <div class="net-legend-line" style="border-top: 2px dashed #888; background: transparent; height: 0;"></div>
+      <span>OR &lt; 1 (protective)</span>
+    </div>
+    <div class="net-legend-item">
+      <div class="net-legend-line" style="background:#FFB000; height:8px; border: 1px solid #d49300; opacity: 0.8;"></div>
+      <span>ORR sig. (sex difference)</span>
+    </div>
   </div>
 </div>
 
@@ -223,6 +226,7 @@ The interactive bipartite network connects socioeconomic gender factors (left) t
   const rightMap = Object.fromEntries(rightNodes.map((n, i) => [n.id, { ...n, x: rX, y: yPos(rightNodes, i) }]));
 
   const sexColor = { male: '#648FFF', female: '#FE6100', both: '#DC267F' };
+
   const linkGroup = svg.append('g').attr('class', 'links');
 
   const orrSel = linkGroup.selectAll('path.orr-glow')
@@ -232,7 +236,8 @@ The interactive bipartite network connects socioeconomic gender factors (left) t
       const mx = (src.x + tgt.x) / 2;
       return `M${src.x},${src.y} C${mx},${src.y} ${mx},${tgt.y} ${tgt.x},${tgt.y}`;
     })
-    .attr('fill', 'none').attr('stroke', '#FFB000').attr('stroke-width', 12).attr('opacity', 0);
+    .attr('fill', 'none').attr('stroke', '#FFB000').attr('stroke-width', 12)
+    .attr('opacity', 0);
 
   const linkSel = linkGroup.selectAll('path.main-link')
     .data(links).join('path').attr('class', 'main-link')
@@ -268,7 +273,9 @@ The interactive bipartite network connects socioeconomic gender factors (left) t
   function drawNodes(nodeMap, anchor) {
     const g = svg.append('g');
     Object.values(nodeMap).forEach(n => {
-      const ng = g.append('g').attr('transform', `translate(${n.x},${n.y})`).style('cursor', 'pointer');
+      const ng = g.append('g')
+        .attr('transform', `translate(${n.x},${n.y})`)
+        .style('cursor', 'pointer');
 
       ng.append('circle').attr('r', nodeR)
         .attr('class', anchor === 'left' ? 'net-node-circle-left' : 'net-node-circle-right')
@@ -287,35 +294,62 @@ The interactive bipartite network connects socioeconomic gender factors (left) t
         const c = getColors();
         const tooltip = document.getElementById('net-tooltip');
         const id = n.id;
+
         linkSel
           .attr('opacity', l => (l.s === id || l.t === id) ? 1 : 0.08)
           .attr('stroke-width', l => (l.s === id || l.t === id) ? 3.5 : 2.5);
-        d3.selectAll('.orr-glow').attr('opacity', l => (l.s === id || l.t === id) ? 0.9 : 0.1);
+        d3.selectAll('.orr-glow')
+          .attr('opacity', l => (l.s === id || l.t === id) ? 0.9 : 0.1);
+
         const relevantLinks = links.filter(l => l.s === id || l.t === id);
         const connectedHTML = relevantLinks.map(l => {
           const isLeft = (l.s === id);
           const otherName = isLeft ? rightMap[l.t].label : leftMap[l.s].label;
           let boxedData = '';
           if (l.sex === 'both') {
-            boxedData = `<span style="display:inline-block;border:1.5px solid #FE6100;color:#FE6100;padding:2px 8px;border-radius:4px;font-weight:600;font-size:0.85em;background:${c.orBg};margin-right:6px;">OR: ${l.orValF}</span><span style="display:inline-block;border:1.5px solid #648FFF;color:#648FFF;padding:2px 8px;border-radius:4px;font-weight:600;font-size:0.85em;background:${c.orBg};margin-right:8px;">OR: ${l.orValM}</span>`;
+            boxedData = `
+              <span style="display:inline-block;border:1.5px solid #FE6100;color:#FE6100;padding:2px 8px;border-radius:4px;font-weight:600;font-size:0.85em;background:${c.orBg};margin-right:6px;">OR: ${l.orValF}</span>
+              <span style="display:inline-block;border:1.5px solid #648FFF;color:#648FFF;padding:2px 8px;border-radius:4px;font-weight:600;font-size:0.85em;background:${c.orBg};margin-right:8px;">OR: ${l.orValM}</span>`;
           } else {
             const gColor = l.sex === 'male' ? '#648FFF' : '#FE6100';
             boxedData = `<span style="display:inline-block;border:1.5px solid ${gColor};color:${gColor};padding:2px 8px;border-radius:4px;font-weight:600;font-size:0.85em;background:${c.orBg};margin-right:8px;">OR: ${l.orVal}</span>`;
           }
           const orrMatch = sigOrrLinks.find(o => o.s === l.s && o.t === l.t);
-          const orrBox = orrMatch ? `<span style="display:inline-block;border:1.5px solid #FFB000;background:${c.orrBoxBg};padding:2px 8px;border-radius:4px;color:${c.text};font-weight:500;font-size:0.85em;">ORR: ${orrMatch.val}</span>` : '';
-          return `<div style="margin-bottom:12px;white-space:nowrap;display:flex;flex-direction:column;"><strong style="color:${c.text};font-size:1.05em;margin-bottom:6px;">${otherName}</strong><div style="display:flex;align-items:center;">${boxedData}${orrBox}</div></div>`;
+          const orrBox = orrMatch
+            ? `<span style="display:inline-block;border:1.5px solid #FFB000;background:${c.orrBoxBg};padding:2px 8px;border-radius:4px;color:${c.text};font-weight:500;font-size:0.85em;">ORR: ${orrMatch.val}</span>`
+            : '';
+          return `<div style="margin-bottom:12px;white-space:nowrap;display:flex;flex-direction:column;">
+            <strong style="color:${c.text};font-size:1.05em;margin-bottom:6px;">${otherName}</strong>
+            <div style="display:flex;align-items:center;">${boxedData}${orrBox}</div>
+          </div>`;
         }).join('');
+
         const headColor = anchor === 'left' ? c.nodeLeft : c.nodeRight;
         tooltip.innerHTML = `<h4 style="margin-bottom:14px;color:${headColor};border-bottom:1px solid ${c.sepColor};padding-bottom:6px;font-weight:600;">${n.label}</h4>${connectedHTML || 'No significant links'}`;
+
         const pctX = (n.x / W) * 100;
         const pctY = (n.y / H) * 100;
-        tooltip.style.top = ''; tooltip.style.bottom = ''; tooltip.style.left = ''; tooltip.style.transform = '';
-        if (anchor === 'left') { tooltip.style.left = `calc(${pctX}% + 24px)`; }
-        else { tooltip.style.left = `calc(${pctX}% - 24px)`; }
-        if (n.y < 80) { tooltip.style.top = '10px'; tooltip.style.transform = anchor === 'left' ? 'translate(0,0)' : 'translate(-100%,0)'; }
-        else if (n.y > 340) { tooltip.style.bottom = '10px'; tooltip.style.transform = anchor === 'left' ? 'translate(0,0)' : 'translate(-100%,0)'; }
-        else { tooltip.style.top = `${pctY}%`; tooltip.style.transform = anchor === 'left' ? 'translate(0,-50%)' : 'translate(-100%,-50%)'; }
+        tooltip.style.top = '';
+        tooltip.style.bottom = '';
+        tooltip.style.left = '';
+        tooltip.style.transform = '';
+
+        if (anchor === 'left') {
+          tooltip.style.left = `calc(${pctX}% + 24px)`;
+        } else {
+          tooltip.style.left = `calc(${pctX}% - 24px)`;
+        }
+
+        if (n.y < 80) {
+          tooltip.style.top = '10px';
+          tooltip.style.transform = anchor === 'left' ? 'translate(0,0)' : 'translate(-100%,0)';
+        } else if (n.y > 340) {
+          tooltip.style.bottom = '10px';
+          tooltip.style.transform = anchor === 'left' ? 'translate(0,0)' : 'translate(-100%,0)';
+        } else {
+          tooltip.style.top = `${pctY}%`;
+          tooltip.style.transform = anchor === 'left' ? 'translate(0,-50%)' : 'translate(-100%,-50%)';
+        }
         tooltip.style.opacity = '1';
       })
       .on('mouseout', function() {
@@ -330,20 +364,22 @@ The interactive bipartite network connects socioeconomic gender factors (left) t
   drawNodes(rightMap, 'right');
 
   svg.append('text').attr('class', 'net-header').attr('x', lX).attr('y', 18).attr('text-anchor', 'middle')
-    .attr('font-size', '13px').attr('font-weight', '600').text('Gender / Socioeconomic Factors');
+    .attr('font-size', '13px').attr('font-weight', '600')
+    .text('Gender / Socioeconomic Factors');
+
   svg.append('text').attr('class', 'net-header').attr('x', rX).attr('y', 18).attr('text-anchor', 'middle')
-    .attr('font-size', '13px').attr('font-weight', '600').text('Chronic Disease Comorbidities');
+    .attr('font-size', '13px').attr('font-weight', '600')
+    .text('Chronic Disease Comorbidities');
 
   applyColors();
   new MutationObserver(applyColors).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+
   setTimeout(animateEntrance, 300);
 })();
 </script>
 
-## Technologies
+The picture that emerges is one of considerable sex heterogeneity. Living in a larger household (≥ 3 members) is consistently associated with higher odds of multiple comorbidities, but predominantly in females. Marital and widowhood statuses tend to be protective for both sexes against depression, while their protective associations with arthrosis appear specifically in males. Employment during the past year is linked to higher odds of chronic pulmonary disease and arthrosis in males—a pattern likely reflecting occupational exposure.
 
-- R / Python
-- DataSHIELD (Federated Analysis)
-- Synthetic Data Generation
-- European Health Interview Survey
-- Machine Learning
+The amber highlights mark four associations where the ORR itself reached significance: household size and asthma, employment and myocardial infarction, education and arthrosis, and widowhood/divorce and renal disease. These are the associations most clearly patterned by biological sex, beyond what the individual OR estimates suggest.
+
+The full analysis is available in {% cite jpm2024socioeconomic %}.
