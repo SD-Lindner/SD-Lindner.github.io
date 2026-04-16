@@ -1,16 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
   <style>
     .bg        { fill: #6117A0; }
-    .text      { fill: #ffffff; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 36px; letter-spacing: 1px; }
-    .light-txt { font-weight: 300; }
-    .bold-txt  { font-weight: 800; }
+    .light-txt { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 62px; letter-spacing: -1px; font-weight: 300; fill: #ffffff; }
+    .bold-txt  { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 62px; letter-spacing: -1px; font-weight: 800; fill: #ffffff; }
     @media (prefers-color-scheme: dark) {
-      .bg   { fill: #1c1c1d; }
-      .text { fill: #B480E8; }
+      .bg        { fill: #1c1c1d; }
+      .light-txt { fill: #B480E8; }
+      .bold-txt  { fill: #B480E8; }
     }
   </style>
-  <rect class="bg" width="100" height="100" rx="20"/>
-  <text class="text" x="50" y="66" text-anchor="middle">
-    <tspan class="light-txt">SD</tspan><tspan class="bold-txt">L</tspan>
+  <!-- rect bleeds 2px past the viewBox on all sides so rounded corners never leave a gap -->
+  <rect class="bg" x="-2" y="-2" width="104" height="104" rx="20"/>
+  <text x="50" y="72" text-anchor="middle">
+    <tspan class="light-txt">sd</tspan><tspan class="bold-txt">L</tspan>
   </text>
 </svg>
