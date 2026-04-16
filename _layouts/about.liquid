@@ -6,7 +6,7 @@ layout: default
     <h1 class="post-title">
       {% if site.title == 'blank' %}
         {{ site.first_name }} {{ site.middle_name }}
-        <span class="font-weight-bold">{{ site.last_name }}</span>
+        <span class="font-weight-bold">{{ site.last_name }}</span>{% if site.academic_title %} <span class="font-weight-light" style="color: var(--global-text-color-light);">{{ site.academic_title }}</span>{% endif %}
       {% else %}
         {{ site.title }}
       {% endif %}

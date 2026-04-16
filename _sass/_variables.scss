@@ -18,7 +18,8 @@ $green-color-lime: #b7d12a !default;
 $green-color-dark: #009f06 !default;
 $green-color-light: #ddffdd !default;
 $green-color-bright: #11d68b !default;
-$purple-color: #b509ac !default;
+$purple-color: #6117A0 !default;        // brand primary (light mode)
+$purple-color-dark: #B480E8 !default;   // brand accent (dark mode, 5.8:1 on dark bg)
 $light-purple-color: color.adjust($purple-color, $lightness: 25%);
 $pink-color: #f92080 !default;
 $pink-color-light: #ffdddd !default;
