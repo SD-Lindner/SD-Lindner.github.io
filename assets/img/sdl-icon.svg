@@ -4,7 +4,7 @@
     .light-txt { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 62px; letter-spacing: -1px; font-weight: 300; fill: #ffffff; }
     .bold-txt  { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 62px; letter-spacing: -1px; font-weight: 800; fill: #ffffff; }
     @media (prefers-color-scheme: dark) {
-      .bg        { fill: #1c1c1d; }
+      .bg        { fill: #3D0D68; }
       .light-txt { fill: #B480E8; }
       .bold-txt  { fill: #B480E8; }
     }
