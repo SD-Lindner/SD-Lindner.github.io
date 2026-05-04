@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-04-20'
+  last_updated: '2026-05-04'
 papers:
   v0lgPK0AAAAJ:0EnyYjriUFMC:
     citations: 1
@@ -17,6 +17,10 @@ papers:
     citations: 5
     title: 'A comparison of synthetic data generation and federated analysis for enabling international evaluations of cardiovascular health. Sci Rep. 2023; 13: 11540'
     year: Unknown Year
+  v0lgPK0AAAAJ:MXK_kJrjxJIC:
+    citations: 0
+    title: Care Trajectories Are Linked to Mental Health and Mortality in Cancer Patients
+    year: '2026'
   v0lgPK0AAAAJ:Se3iqnhoufwC:
     citations: 3
     title: 'Socioeconomic Gender Variables Impact the Association between Hypertension and Chronic Health Issues: Cross-Sectional Study'
