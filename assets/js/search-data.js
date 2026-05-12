@@ -44,7 +44,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/news/";
           },
-        },{id: "post-revisiting-gender-socioeconomics-and-hypertension-comorbidities",
+        },{id: "post-how-opinions-drive-the-formation-of-social-groups",
+        
+          title: "How opinions drive the formation of social groups",
+        
+        description: "An interactive animation of the spin-glass self-assembly model from our PRL paper on homophily-based group formation.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/spin-glass-groups/";
+          
+        },
+      },{id: "post-revisiting-gender-socioeconomics-and-hypertension-comorbidities",
         
           title: "Revisiting gender, socioeconomics, and hypertension comorbidities",
         
@@ -60,6 +71,12 @@ ninja.data = [{
           description: "",
           section: "News",},{id: "news-successfully-defended-my-phd-thesis-statistical-network-approach-to-identify-gender-related-factors-and-interactions-in-chronic-diseases-at-the-medical-university-of-vienna",
           title: 'Successfully defended my PhD thesis — Statistical network approach to identify gender-related factors...',
+          description: "",
+          section: "News",},{id: "news-new-preprint-out-care-trajectories-are-linked-to-mental-health-and-mortality-in-cancer-patients-we-use-dynamic-time-warping-and-hierarchical-clustering-to-analyze-longitudinal-care-patterns-in-over-8-000-haematologic-malignancy-patients",
+          title: 'New preprint out: Care Trajectories Are Linked to Mental Health and Mortality in...',
+          description: "",
+          section: "News",},{id: "news-new-blog-post-built-an-interactive-monte-carlo-animation-for-jan-korbel-et-al-s-spin-glass-group-formation-model-prl-2023-on-which-i-m-a-co-author-drag-the-temperature-slider-to-watch-opinion-clusters-form-and-dissolve",
+          title: 'New blog post: built an interactive Monte Carlo animation for Jan Korbel et...',
           description: "",
           section: "News",},{id: "projects-patient-visit-trajectories",
           title: 'Patient Visit Trajectories',
