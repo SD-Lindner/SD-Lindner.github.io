@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-07-13'
+  last_updated: '2026-07-31'
 papers:
   v0lgPK0AAAAJ:0EnyYjriUFMC:
     citations: 2
@@ -9,6 +9,10 @@ papers:
     citations: 12
     title: Meteorological factors and non-pharmaceutical interventions explain local differences in the spread of SARS-CoV-2 in Austria
     year: '2022'
+  v0lgPK0AAAAJ:3fE2CSJIrl8C:
+    citations: 0
+    title: Statistical network approach to identify gender-related factors and interactions in chronic diseases
+    year: '2025'
   v0lgPK0AAAAJ:5nxA0vEk-isC:
     citations: 0
     title: Estimating unreported SARS-CoV-2 infections in Austria using wastewater-based epidemiology
@@ -22,11 +26,11 @@ papers:
     title: Care Trajectories Are Linked to Mental Health and Mortality in Cancer Patients
     year: '2026'
   v0lgPK0AAAAJ:Se3iqnhoufwC:
-    citations: 4
+    citations: 5
     title: 'Socioeconomic Gender Variables Impact the Association between Hypertension and Chronic Health Issues: Cross-Sectional Study'
     year: '2024'
   v0lgPK0AAAAJ:Tyk-4Ss8FVUC:
-    citations: 13
+    citations: 14
     title: Sex differences in clinical characteristics and outcomes of patients with SARS-CoV-2-infection admitted to intensive care units in Austria
     year: '2022'
   v0lgPK0AAAAJ:UebtZRa9Y70C:
@@ -38,26 +42,26 @@ papers:
     title: SEX AND GENDER ASPECTS IN HYPERTENSION PREVALENCE OF CANADIAN AND EUROPEAN POPULATIONS
     year: '2022'
   v0lgPK0AAAAJ:WF5omc3nYNoC:
-    citations: 32
+    citations: 33
     title: Homophily-based social group formation in a spin glass self-assembly framework
     year: '2023'
   v0lgPK0AAAAJ:_FxGoFyzp5QC:
-    citations: 27
+    citations: 28
     title: A comparison of synthetic data generation and federated analysis for enabling international evaluations of cardiovascular health
     year: '2023'
   v0lgPK0AAAAJ:hqOjcs7Dif8C:
-    citations: 69
+    citations: 70
     title: 'Identification and inclusion of gender factors in retrospective cohort studies: the GOING-FWD framework'
     year: '2021'
   v0lgPK0AAAAJ:qjMakFHDy7sC:
-    citations: 22
+    citations: 23
     title: Agent-based simulations for protecting nursing homes with prevention and vaccination strategies
     year: '2021'
   v0lgPK0AAAAJ:u5HHmVD_uO8C:
-    citations: 12
+    citations: 13
     title: Thermodynamics of structure-forming systems
     year: '2021'
   v0lgPK0AAAAJ:ufrVoPGSRksC:
-    citations: 4
+    citations: 5
     title: The interplay of adipokines, body composition and glucose homeostasis in pregnant women with a history of RYGB operation
     year: '2023'
